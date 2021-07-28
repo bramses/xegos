@@ -39,7 +39,7 @@ exports.__esModule = true;
 var OpenAI = require('openai-api');
 var dotenv = require("dotenv");
 dotenv.config();
-var fs = require("fs");
+var fs_1 = require("fs");
 var OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 var openai = new OpenAI(OPENAI_API_KEY);
 /*
@@ -50,12 +50,13 @@ var createLegoBlock = function (name, command, legos, language) {
     if (legos === void 0) { legos = []; }
     if (language === void 0) { language = 'Node JS'; }
     return __awaiter(void 0, void 0, void 0, function () {
-        var engine, prompt, maxTokens, temperature, topP, presencePenalty, frequencyPenalty, bestOf, n, stream, stop, response, legoStr;
+        var engine, prompt_1, maxTokens, temperature, topP, presencePenalty, frequencyPenalty, bestOf, n, stream, stop_1, response, legoStr, fileCreated, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    _a.trys.push([0, 3, , 4]);
                     engine = 'davinci-codex';
-                    prompt = legos.length > 0 ? "Language: " + language + "\n\n " + legos.join('\n') + "\n\n /* " + command + " */" : "Language: " + language + "\n\n /* " + command + " */";
+                    prompt_1 = legos.length > 0 ? "Language: " + language + "\n\n " + legos.join('\n') + "\n\n /* " + command + " */" : "Language: " + language + "\n\n /* " + command + " */";
                     maxTokens = 64;
                     temperature = 0.01;
                     topP = 1;
@@ -64,19 +65,20 @@ var createLegoBlock = function (name, command, legos, language) {
                     bestOf = 1;
                     n = 1;
                     stream = false;
-                    stop = ['/*'];
-                    return [4 /*yield*/, openai.complete({ engine: engine, prompt: prompt, maxTokens: maxTokens, temperature: temperature, topP: topP, presencePenalty: presencePenalty, frequencyPenalty: frequencyPenalty, bestOf: bestOf, n: n, stream: stream, stop: stop })];
+                    stop_1 = ['/*'];
+                    return [4 /*yield*/, openai.complete({ engine: engine, prompt: prompt_1, maxTokens: maxTokens, temperature: temperature, topP: topP, presencePenalty: presencePenalty, frequencyPenalty: frequencyPenalty, bestOf: bestOf, n: n, stream: stream, stop: stop_1 })];
                 case 1:
                     response = _a.sent();
-                    legoStr = "const command:string = '" + command + "';\nconst lego:string = `" + response.data.choices[0].text.trim() + "`;\nconst language:string = '" + language + "';\nmodule.exports = { lego, command, language };\n    ";
-                    fs.writeFile(name + ".ts", legoStr, function (err) {
-                        if (err) {
-                            console.error(err);
-                            return;
-                        }
-                        console.log("Lego block " + name + " created!");
-                    });
-                    return [2 /*return*/];
+                    legoStr = "const command:string = '" + command + "';\nconst lego:string = `" + response.data.choices[0].text.trim() + "`;\n\nconst language:string = '" + language + "';\n\nmodule.exports = { lego, command, language };\n        ";
+                    return [4 /*yield*/, fs_1.promises.writeFile(name + ".ts", legoStr)];
+                case 2:
+                    fileCreated = _a.sent();
+                    console.log("Lego block " + fileCreated + " created!");
+                    return [3 /*break*/, 4];
+                case 3:
+                    err_1 = _a.sent();
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/];
             }
         });
     });
