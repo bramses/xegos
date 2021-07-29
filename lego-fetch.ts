@@ -29,6 +29,8 @@ const readLegoTxtFile = async (path: string) => {
         legoCommand += commentType[JSON.parse(ll).language].start +  JSON.parse(ll).command + commentType[JSON.parse(ll).language].end + '\n\n' + JSON.parse(ll).lego;
     }
     console.log(legoCommand);
+
+    await fs.writeFile(path + 'test.ts', legoCommand);
 }
 
 readLegoTxtFile('').then(() => {
