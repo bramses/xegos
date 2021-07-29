@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc index.ts && node index.js"
+    "start": "tsc index.ts --outDir dist && node dist/index.js",
+    "fetch": "tsc lego-fetch.ts --outDir dist && node dist/lego-fetch.js"
   },
   "keywords": [],
   "author": "",
