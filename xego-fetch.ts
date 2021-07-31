@@ -16,7 +16,7 @@ const readXegoTxtFile = async (path: string) => {
     let xegos = xegoFile.split("\n")
     for (let i = 0; i < xegos.length; i++) {
         if (i === 0) {
-            fileEnding = fileEndings[xegos[i].split(":")[1].trim()]
+            fileEnding = fileEndings[xegos[i].split(":")[1].trim().toLowerCase()]
         } else {
             const ll = await fs.readFile('xegos/' + xegos[i] + fileEnding, "utf8");
             xegoCommand += ll + "\n"

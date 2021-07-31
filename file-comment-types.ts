@@ -1,23 +1,39 @@
 const commentTypes = {
-    "NodeJS": {
+    "nodejs": {
         "start": "/*",
         "end": "*/"
     },
-    "JavaScript": {
+    "javascript": {
         "start": "/*",
         "end": "*/"
     },
-    "HTML,JS,CSS": {
+    "typescript": {
         "start": "/*",
         "end": "*/"
     },
-    "TypeScript": {
+    "js": {
         "start": "/*",
         "end": "*/"
     },
-    "Python": {
+    "ts": {
+        "start": "/*",
+        "end": "*/"
+    },
+    "python": {
         "start": "'''",
         "end": "'''"
+    },
+    "py": {
+        "start": "'''",
+        "end": "'''"
+    },
+    "html": {
+        "start": "<!--",
+        "end": "-->"
+    },
+    "css": {
+        "start": "/*",
+        "end": "*/"
     },
 };
 

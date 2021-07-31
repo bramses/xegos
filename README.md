@@ -26,12 +26,3 @@ todo...
 ## Xego Repository
 
 todo...
-
-
-# Scratchpad
-
-File Name = name of command that can be installed
-Command Used = 
-1. comment in top of file? (problem with formatting -- what if its deleted)
-2. metadata in file? 
-3. JSON in neighboring file? (problem with editing -- how do I store it?)

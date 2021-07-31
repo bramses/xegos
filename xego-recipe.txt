@@ -1,3 +1,2 @@
-Language:HTML,JS,CSS
-create-a-header
-make-it-bold
+Language:html
+make-a-header

@@ -27,6 +27,7 @@ The language parameter will be set to Node JS if you are using NodeJS.
 const createXegoBlock = async (name: string = null, command: string, xegoPath:string = null, language: string = 'NodeJS', maxTokens: number = 150, temperature: number = 0.1): Promise<Xego> => {
     try {
         const engine = 'davinci-codex'
+        language = language.toLowerCase();
     
                        /*
                        This code is checking to see if any xego building blocks were passed in. 
@@ -37,9 +38,7 @@ const createXegoBlock = async (name: string = null, command: string, xegoPath:st
         let prompt = ''
         let xegoTower = ''
         if (xegoPath) {
-            console.log(xegoPath)
             xegoTower = await readXegoTxtFile(xegoPath);
-            console.log(xegoTower);
             prompt = `Language: ${language}\n\n ${xegoTower}\n\n${commentTypes[language].start} ${command} ${commentTypes[language].end}`;
         }
         else {
@@ -82,4 +81,4 @@ const writeXegoToFile = async (xego: Xego): Promise<any> => {
     }
 }
 
-createXegoBlock("", "make it red", 'xego-recipe.txt', 'HTML,JS,CSS').then(writeXegoToFile).catch(console.error);
+createXegoBlock("", "make it red", 'xego-recipe.txt', 'HTML').then(writeXegoToFile).catch(console.error);
