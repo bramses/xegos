@@ -1,12 +1,12 @@
 {
-  "name": "codex-lego-blocks",
+  "name": "codex-xego-blocks",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc index.ts --outDir dist && node dist/index.js",
-    "fetch": "tsc lego-fetch.ts --outDir dist && node dist/lego-fetch.js"
+    "fetch": "tsc xego-fetch.ts --outDir dist && node dist/xego-fetch.js"
   },
   "keywords": [],
   "author": "",
