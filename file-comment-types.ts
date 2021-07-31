@@ -7,6 +7,10 @@ const commentTypes = {
         "start": "/*",
         "end": "*/"
     },
+    "HTML,JS,CSS": {
+        "start": "/*",
+        "end": "*/"
+    },
     "TypeScript": {
         "start": "/*",
         "end": "*/"
