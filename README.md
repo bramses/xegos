@@ -2,11 +2,15 @@
 
 ## Installation
 
-Put your OAI key in `.env`
+1. git clone
+2. `npm install`
+3. `npm install -g ./`. This will put `xego` on your path
+4. `cd` to whatever project you want to make xegos in
+5. Put your OAI key in `.env` as `OPENAI_API_KEY`
 
 ## Create a New xego
 
-To create a new xego run `npm run n-xego -command | --c "your command here" --name "your-xego-name"`
+To create a new xego run `xego -command | --c "your command here" --name "your-xego-name"`
 
 This will create a file in your directory called `{command}.js`
 
