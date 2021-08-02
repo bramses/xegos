@@ -5,6 +5,7 @@ import createXegoBlock from './index';
 import { writeXegoToFile } from './xego-fs'; 
 const dotenv = require('dotenv');
 dotenv.config();
+const loading =  require('loading-cli');
 
 interface Options {
     name: string;
@@ -34,8 +35,13 @@ if (!process.env.OPENAI_API_KEY) {
 
 const main = async (options: Options) => {
     try {
-        const xego = await createXegoBlock(options.name, options.command, options.path, options.language, options.maxTokens, options.temperature);
+        const loader = loading(`fetching codex from openai and writing to file: xegos/${options.name ? options.name : options.command.split(' ').join('-')}`).start()
+        const colors = ['red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white']
+        loader.color = colors[Math.floor(Math.random() * colors.length)];
+        loader.frames = ["◰", "◳", "◲", "◱"]
+        const xego = await createXegoBlock(options.name, options.command, options.path, options.language, Number(options.maxTokens), Number(options.temperature));
         await writeXegoToFile(xego);
+        loader.stop()
     } catch (err) {
         throw err;
     }
