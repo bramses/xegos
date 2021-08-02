@@ -64,6 +64,3 @@ const createXegoBlock = async (name: string = null, command: string, xegoPath:st
 
 
 export default createXegoBlock;
-
-// createXegoBlock("", "make it red", 'xego-recipe.txt', 'HTML').then(writeXegoToFile).catch(console.error);
-
