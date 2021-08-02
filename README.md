@@ -12,7 +12,9 @@
 
 To create a new xego run `xego --command | -c "your command here" --name "your-xego-name"`
 
-This will create a file in your directory called `{command}.js`
+This will create a file in your directory called `xegos/{command}.js`
+
+NB: todo...create `xegos` dir if it doesn't exist
 
 For more complex xegos, you can pass in other xegos as arguments from a file. Post them in order. 
 For example `npm run n-xego -command | --c "your command here" --path xego.txt`
