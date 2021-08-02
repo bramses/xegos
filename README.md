@@ -3,7 +3,7 @@
 ## Installation
 
 1. git clone
-2. cd into xegos and `npm install`
+2. cd into xegos and `npm install` and `npm cli`
 3. `npm install -g ./`. This will put `xego` on your path
 4. `cd` to whatever project you want to make xegos in
 5. Put your OAI key in `.env` as `OPENAI_API_KEY`
