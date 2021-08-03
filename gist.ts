@@ -62,5 +62,3 @@ const gist = async (description: string, paths: string[]) => {
 }
 
 export default gist;
-
-// main('Test gist', ['add.js', 'fib.js', 'main.js']);
