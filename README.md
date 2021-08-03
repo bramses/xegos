@@ -10,14 +10,11 @@
 
 ## Create a New xego
 
-To create a new xego run `xego --command | -c "your command here" --name "your-xego-name"`
+To create a new xego run `xego new --command | -c "your command here" --name "your-xego-name"`
 
 This will create a file in your directory called `xegos/{command}.js`
 
-NB: todo...create `xegos` dir if it doesn't exist
-
 For more complex xegos, you can pass in other xegos as arguments from a file. Post them in order. 
-For example `npm run n-xego -command | --c "your command here" --path xego.txt`
 
 ## Xego Tower
 
@@ -40,7 +37,14 @@ See `xego-recipe.txt` for an example.
 
 ## Send your xego to GitHub Gist
 
-todo...
+Set these in `.env`:
+```
+GIT_USERNAME=
+GIT_PASSWORD=
+GIT_TOKEN=
+```
+
+Run `xego gist -f 'filenames here seperated by spaces' -d 'the description'`
 
 ## Xego Repository -- Find Other People's Xegos!
 
