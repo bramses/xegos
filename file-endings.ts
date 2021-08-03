@@ -6,6 +6,7 @@ const fileEndings = {
     "typescript": ".ts",
     "ts": ".ts",
     "python": ".py",
+    "py": ".py",
     "html": ".html",
     "css": ".css",
 };
