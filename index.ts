@@ -35,8 +35,8 @@ const createXegoBlock = async (name: string = null, command: string, xegoPath:st
             prompt = `Language: ${language}\n\n ${commentTypes[language].start} ${command} ${commentTypes[language].end}`;
         }
         const topP = 1
-        const presencePenalty = 0
-        const frequencyPenalty = 0
+        const presencePenalty = 0.5
+        const frequencyPenalty = 0.5
         const bestOf = 1
         const n = 1
         const stream = false
