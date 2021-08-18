@@ -1,7 +1,7 @@
 {
   "name": "xegos",
   "version": "1.0.0",
-  "description": "",
+  "description": "A CLI to use OpenAI Codex to create xegos, small composable files that spark projects.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
