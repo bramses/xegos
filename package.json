@@ -1,5 +1,5 @@
 {
-  "name": "codex-xego-blocks",
+  "name": "xegos",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -23,7 +23,7 @@
     "inquirer": "^8.1.2",
     "loading-cli": "^1.1.0",
     "node-fetch": "^2.6.1",
-    "openai-api": "^1.2.3",
+    "openai-api": "^1.2.5",
     "typescript": "^4.3.5"
   },
   "devDependencies": {
