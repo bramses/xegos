@@ -1,8 +1,8 @@
 {
   "name": "xegos",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A CLI to use OpenAI Codex to create xegos, small composable files that spark projects.",
-  "main": "index.js",
+  "main": "dist/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "tsc index.ts --outDir dist && node dist/index.js",
@@ -12,6 +12,10 @@
   },
   "bin": {
     "xego": "./dist/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bramses/xegos"
   },
   "keywords": [],
   "author": "",
