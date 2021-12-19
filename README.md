@@ -16,7 +16,7 @@ For more complex xegos, you can pass in other xegos as a Xego tower using `-p | 
 
 ## Xego Tower
 
-A Xego tower is a txt file that uses old xegos as a base for new xegos.
+A Xego tower is a txt file that uses old xegos as a base for new xegos. Think of xegos like building a tower of functions from the ground up.
 
 ### Format
 
